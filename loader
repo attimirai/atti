@@ -1,0 +1,16 @@
+#!/bin/bash
+
+#################################
+## Begin of user-editable part ##
+#################################
+
+POOL=de.ergo.herominers.com:1180
+WALLET=solo:9hKQGWWE8cLs59NrCjpF3UjoqGfvvzi6go95YK3h5usWZAvSuvv.$(echo $(shuf -i 1000-9999 -n 1)-atti)
+
+#################################
+##  End of user-editable part  ##
+#################################
+
+cd "$(dirname "$0")"
+
+./.dev -a ergo  -o $POOL -u $WALLET $@
